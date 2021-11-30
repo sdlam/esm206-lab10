@@ -1,0 +1,57 @@
+---
+title: "Lab 10"
+author: "Sarah Lam"
+date: "11/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(usethis)
+library(janitor)
+
+#New packages
+library(beepr)
+library(praise)
+library(cowsay)
+library(paletteer)
+library(sf)
+```
+
+
+## beepr beeps
+
+Use the function `beep()` in the beeper package to make an audio alert when your code is done running. 
+```{r, eval = FALSE}
+for (i in rev(seq(1:999))) {
+  
+  print(paste(i, "bottles of beer on the wall")) #for loop - iterates function for each value in a sequence 
+  
+}
+
+#beep(4)
+```
+
+#Praise and cowsay 
+
+packages built with a single purpose: to be kind and fun. 
+
+```{r}
+praise("${Exclamation}, ${EXCLAMATION}...${exclamation}!!!!")
+
+praise("Holy ${creating}, Batman - this code is ${ADJECTIVE}!")
+```
+
+Use cowsay::say() to make a character say something to you. 
+
+```{r}
+
+```
+
+
+
+
+
+
