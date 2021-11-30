@@ -1,5 +1,5 @@
 ---
-title: "Lab 10"
+title: "Lab 10 - just some useful things"
 author: "Sarah Lam"
 date: "11/30/2021"
 output: html_document
@@ -47,9 +47,24 @@ praise("Holy ${creating}, Batman - this code is ${ADJECTIVE}!")
 Use cowsay::say() to make a character say something to you. 
 
 ```{r}
-
+cowsay::say(praise::praise("You're doing ${ADJECTIVE} today!!"), by = "trilobite")
 ```
 
+How to make a non-version controlled rproj, a version controlled repo with git
+- In console run `usethis::use_git()`
+- Then run `usethis::use_github()` also in console
+
+## Use paletteer to access thousands of color palettes
+
+```{r}
+storms %>% 
+  group_by(name) %>% 
+  summarize(min_pressure = min(pressure, na.rm =TRUE)) %>% 
+  slice_min(n = 10, min_pressure) %>% 
+  ggplot(aes(x = min_pressure, y = name)) +
+  geom_col(aes(fill = name)) +
+  scale_fill_paletteer_d("palettetown::miltank")
+```
 
 
 
